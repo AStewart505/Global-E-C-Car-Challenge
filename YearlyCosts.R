@@ -20,6 +20,17 @@ fuelPrices = read_excel("UNI 23-24/Hacathon/Car Challenge/Fuel Prices and Conver
 fuelConversions = read_excel("UNI 23-24/Hacathon/Car Challenge/Fuel Prices and Conversions.xlsx", 
                              sheet = "Conversions")
 
+mergeCars = list(audi,bmw,ford,hyundai,merc,skoda,toyota,vw)
+allCars = function(mergeCars) {
+  allCars = mergeCars[[1]]
+  for (i in 2:length(mergeCars)) {
+    allCars = merge(allcars, mergeCars[[i]], by = "ID", all = TRUE)
+  }
+  return(allCars)
+}
+
+allCars = function(mergeCars)
+
 
 
 gallonConversion = fuelConversions$Litres
@@ -36,13 +47,10 @@ calculateCostPerMile = function(costPerGallon, mpg,fuelType){
 
 getMaintenance = function(model,year, Car_Maintenance_Costs){
   for( x in 1:nrow(Car_Maintenance_Costs)){
-
-    
   }
-  
 }
 
-#finalCost = function(costPerMile, tax, )
+
  
 
 PerMile = c()
